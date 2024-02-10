@@ -1,3 +1,3 @@
 <template>
-    <h1>PUBLIC</h1>
+    Redirected
 </template>

@@ -14,9 +14,31 @@ export default defineNuxtConfig({
     },
     "@pinia/nuxt",
     "@nuxtjs/i18n",
+    "@hebilicious/authjs-nuxt"
   ],
+  alias: {
+    cookie: "cookie"
+  },
+  authJs: {
+    guestRedirectTo: "/redirected"
+  },
   pinia: {
     storesDirs: ["./stores/**"],
+  },
+  runtimeConfig: {
+    authJs: {
+      secret: process.env.NUXT_NEXTAUTH_SECRET
+    },
+    github: {
+      clientId: process.env.NUXT_GITHUB_CLIENT_ID,
+      clientSecret: process.env.NUXT_GITHUB_CLIENT_SECRET
+    },
+    public: {
+      authJs: {
+        baseUrl: process.env.NUXT_PUBLIC_NEXTAUTH_URL,
+        verifyClientOnEveryRequest: true
+      }
+    }
   },
   vite: {
     vue: {

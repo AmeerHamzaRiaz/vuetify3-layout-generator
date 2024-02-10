@@ -31,6 +31,8 @@
     "vuetify": "^3.4.9"
   },
   "dependencies": {
+    "@auth/core": "0.17.0",
+    "@hebilicious/authjs-nuxt": "^0.3.5",
     "@mdi/font": "^7.4.47",
     "@pinia/nuxt": "^0.5.1",
     "pinia": "^2.1.7"
