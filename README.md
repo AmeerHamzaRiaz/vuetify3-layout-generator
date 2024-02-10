@@ -8,8 +8,8 @@ Starter Template for Nuxt 3
 - [x] Eslint + Prettier
 - [x] i18n
 - [x] Pinia
-- [] Auth 2.0
-- [] Vitest
+- [ ] Auth 2.0
+- [ ] Vitest
 
 
 ## Development Server
