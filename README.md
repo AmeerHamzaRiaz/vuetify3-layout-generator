@@ -4,12 +4,12 @@ Starter Template for Nuxt 3
 
 ## Features
 
-[x] Vuetify
-[x] Eslint + Prettier
-[x] i18n
-[x] Pinia
-[] Auth 2.0
-[] Vitest
+- [x] Vuetify
+- [x] Eslint + Prettier
+- [x] i18n
+- [x] Pinia
+- [] Auth 2.0
+- [] Vitest
 
 
 ## Development Server
