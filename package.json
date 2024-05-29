@@ -1,40 +1,32 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "vuetify-layout-builter",
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint:js": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
-    "lint:prettier": "prettier --check .",
-    "lint": "pnpm run lint:js && pnpm run lint:prettier",
-    "lintfix": "prettier --write --list-different . && pnpm run lint:js --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "@pinia/nuxt": "^0.5.1",
+    "pinia": "^2.1.7",
+    "prismjs": "^1.29.0"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.2.0",
-    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@antfu/eslint-config": "^2.18.1",
     "@nuxtjs/i18n": "^8.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.16.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
+    "@types/prismjs": "^1.26.4",
+    "eslint": "^9.3.0",
     "nuxt": "^3.9.0",
-    "prettier": "3.1.1",
     "typescript": "^5.3.3",
     "vite-plugin-vuetify": "^2.0.1",
     "vue": "^3.3.13",
     "vue-router": "^4.2.5",
-    "vuetify": "^3.4.9"
-  },
-  "dependencies": {
-    "@auth/core": "0.17.0",
-    "@hebilicious/authjs-nuxt": "^0.3.5",
-    "@mdi/font": "^7.4.47",
-    "@pinia/nuxt": "^0.5.1",
-    "pinia": "^2.1.7"
+    "vuetify": "^3.6.7"
   }
 }
