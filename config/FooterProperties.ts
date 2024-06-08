@@ -19,7 +19,7 @@ export const footerProperties = [
         title: 'Absolute',
         component: Component.SWITCH,
         type: PropertyType.PROP,
-        default: false,
+        default: true,
         description: 'Applies position: absolute to the component.',
       },
       {

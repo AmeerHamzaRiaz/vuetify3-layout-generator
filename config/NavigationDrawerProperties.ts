@@ -169,7 +169,7 @@ export const navigationDrawerProperties = [
         name: 'rail',
         title: 'Rail',
         component: Component.SWITCH,
-        default: true,
+        default: false,
         type: PropertyType.PROP,
         description: 'Sets the component width to the rail-width value.',
       },
@@ -191,7 +191,7 @@ export const navigationDrawerProperties = [
       },
       {
         name: 'sticky',
-        title: 'Ticky',
+        title: 'Sticky',
         component: Component.SWITCH,
         default: false,
         type: PropertyType.PROP,

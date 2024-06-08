@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-bind="{ ...$attrs.values }">
+  <v-navigation-drawer v-bind="{ ...$attrs.values }" :permanent="$attrs.values.permanent && !$vuetify.display.mobile">
     <v-list-item title="My Application" subtitle="Vuetify" />
     <v-divider />
     <v-list-item link title="List Item 1" />

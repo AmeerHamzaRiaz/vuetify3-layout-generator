@@ -12,9 +12,11 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@highlightjs/vue-plugin": "^2.1.0",
     "@mdi/font": "^7.4.47",
     "@pinia/nuxt": "^0.5.1",
     "pinia": "^2.1.7",
+    "prism-theme-vars": "^0.2.4",
     "prismjs": "^1.29.0"
   },
   "devDependencies": {
@@ -22,7 +24,9 @@
     "@nuxtjs/i18n": "^8.0.0",
     "@types/prismjs": "^1.26.4",
     "eslint": "^9.3.0",
+    "markdown-it-prism": "^2.3.0",
     "nuxt": "^3.9.0",
+    "sass": "^1.77.4",
     "typescript": "^5.3.3",
     "vite-plugin-vuetify": "^2.0.1",
     "vue": "^3.3.13",

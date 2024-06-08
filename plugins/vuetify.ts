@@ -10,6 +10,14 @@ export default defineNuxtPlugin((app) => {
     components: {
       ...labsComponents,
     },
+    defaults: {
+      VNumberInput: {
+        VBtn: { variant: 'text' },
+      },
+      VStepperActions: {
+        VBtn: { variant: 'flat' },
+      },
+    },
   })
   app.vueApp.use(vuetify)
 })

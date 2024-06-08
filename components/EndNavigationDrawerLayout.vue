@@ -1,6 +1,7 @@
 <template>
   <v-navigation-drawer
     v-bind="{ ...$attrs.values }"
+    :permanent="$attrs.values.permanent && !$vuetify.display.mobile"
   >
     <template #prepend>
       <v-list-item
