@@ -18,6 +18,7 @@
     "@pinia/nuxt": "^0.5.1",
     "markdown-it-prism": "^2.3.0",
     "nuxt": "^3.9.0",
+    "nuxt-clarity-analytics": "^0.0.6",
     "pinia": "^2.1.7",
     "prism-theme-vars": "^0.2.4",
     "prismjs": "^1.29.0",

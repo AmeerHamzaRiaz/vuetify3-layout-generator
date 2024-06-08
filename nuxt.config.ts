@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     },
     '@pinia/nuxt',
     '@nuxtjs/i18n',
+    'nuxt-clarity-analytics',
   ],
   pinia: {
     storesDirs: ['./stores/**'],
