@@ -14,23 +14,23 @@
   "dependencies": {
     "@highlightjs/vue-plugin": "^2.1.0",
     "@mdi/font": "^7.4.47",
-    "@pinia/nuxt": "^0.5.1",
-    "pinia": "^2.1.7",
-    "prism-theme-vars": "^0.2.4",
-    "prismjs": "^1.29.0"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "^2.18.1",
     "@nuxtjs/i18n": "^8.0.0",
-    "@types/prismjs": "^1.26.4",
-    "eslint": "^9.3.0",
+    "@pinia/nuxt": "^0.5.1",
     "markdown-it-prism": "^2.3.0",
     "nuxt": "^3.9.0",
+    "pinia": "^2.1.7",
+    "prism-theme-vars": "^0.2.4",
+    "prismjs": "^1.29.0",
     "sass": "^1.77.4",
     "typescript": "^5.3.3",
     "vite-plugin-vuetify": "^2.0.1",
     "vue": "^3.3.13",
     "vue-router": "^4.2.5",
     "vuetify": "^3.6.7"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.18.1",
+    "@types/prismjs": "^1.26.4",
+    "eslint": "^9.3.0"
   }
 }
