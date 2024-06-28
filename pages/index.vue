@@ -6,3 +6,7 @@ useHead({
   ],
 })
 </script>
+
+<template>
+  <div />
+</template>

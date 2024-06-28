@@ -1,6 +1,6 @@
 import { Component, PropertyGroup, PropertyType, UI } from '~/enums'
 
-export const footerProperties = [
+export const footerLayoutProperties = [
   {
     groupName: 'Positioning',
     props: [

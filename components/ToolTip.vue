@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <v-tooltip :text="description" location="top" max-width="220">
+  <v-tooltip v-if="description" :text="description" location="top" max-width="220">
     <template #activator="{ props }">
       <v-btn variant="text" color="primary" icon="mdi-information-outline" v-bind="props" size="sm" />
     </template>

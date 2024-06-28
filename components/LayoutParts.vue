@@ -17,8 +17,9 @@ const layouts: Ref<string[]> = ref([])
 function onUpdateModelValue(val: string[]): void {
   const updateVisibleValues = { ...props.values }
 
-  for (const layout in updateVisibleValues)
+  for (const layout in updateVisibleValues) {
     updateVisibleValues[layout] = val.includes(layout)
+  }
 
   emit('update:values', updateVisibleValues)
 }

@@ -1,16 +1,7 @@
 <script setup lang="ts">
-// Styles
 import Prism from 'prismjs'
-import 'prismjs/themes/prism.css'
-import 'prismjs/components/prism-bash.js'
-import 'prismjs/components/prism-css.js'
-import 'prismjs/components/prism-javascript.js'
-import 'prismjs/components/prism-json.js'
-import 'prismjs/components/prism-sass.js'
-import 'prismjs/components/prism-scss.js'
-import 'prismjs/components/prism-typescript.js'
+import 'prismjs/themes/prism.min.css'
 
-// Types
 import type { ComponentPublicInstance } from 'vue'
 
 const props = defineProps({
@@ -27,43 +18,34 @@ const props = defineProps({
   },
 })
 
-// Transform inline links in typescript into actual links
-Prism.languages.insertBefore('typescript', 'string', {
-  hyperlink: /<a.*?>(.*?)<\/a>/g,
-})
-Prism.hooks.add('wrap', (env) => {
-  if (env.type === 'hyperlink' && env.tag !== 'a') {
-    env.tag = 'a'
-    env.content = env.content.replaceAll('&lt;', '<')
-    env.attributes.href = /href="(.*?)"/.exec(env.content)?.[1] || ''
-    env.attributes.target = '_blank'
-    env.content = stripLinks(env.content)[0]
-  }
-})
-
-const { t } = useI18n()
+// Data Propeties
+const highlighted = ref('')
 const clicked = ref(false)
 const root = ref<ComponentPublicInstance>()
 
-const highlighted = ref('')
-watchEffect(async () => {
-  highlighted.value = props.code && props.language && Prism.highlight(await props.code, Prism.languages[props.language], props.language)
-})
-
+// Computed Properties
 const className = computed(() => `language-${props.language}`)
 const icon = computed(() => clicked.value ? 'mdi-check' : 'mdi-clipboard-text-outline')
 
-async function copy() {
+// Methods
+const copy = async () => {
+  const wait = (ms: number | undefined) => {
+    return new Promise(resolve => setTimeout(resolve, ms))
+  }
+
   const el = root.value?.$el.querySelector('code')
-
-  navigator.clipboard.writeText(props.code || el?.innerText || '')
-
+  navigator.clipboard.writeText(props.code || el?.textContent || '')
   clicked.value = true
-
   await wait(2000)
-
   clicked.value = false
 }
+
+// Lifecycle methods
+watchEffect(async () => {
+  highlighted.value = props.code
+  && props.language
+  && Prism.highlight(await props.code, Prism.languages[props.language], props.language)
+})
 </script>
 
 <template>
@@ -107,7 +89,7 @@ async function copy() {
         </v-fade-transition>
       </template>
 
-      <span>{{ t('copy-source') }}</span>
+      <span>Copy Source</span>
     </v-tooltip>
 
     <div class="pa-4 pe-12">
@@ -168,139 +150,13 @@ async function copy() {
     }
   }
 
-  pre.language-bash::after {
-    content: ' sh ';
-  }
-
   pre.language-html::after {
     content: 'html';
-  }
-
-  pre.language-js::after {
-    content: ' js ';
-  }
-
-  pre.language-json::after {
-    content: 'json';
-  }
-
-  pre.language-sass::after {
-    content: 'sass';
-  }
-
-  code.language-scss::after {
-    content: 'scss';
-  }
-
-  pre.language-ts::after {
-    content: ' ts ';
   }
 
   pre.language-vue::after {
     content: 'vue';
   }
 
-  // TODO: handle this differently
-  &.v-theme--blackguard,
-  &.v-theme--dark {
-    --prism-interpolation: var(--prism-operator);
-
-    code,
-    pre {
-      color: #ccc !important;
-
-      &::selection, ::selection {
-        background-color: #113663;
-      }
-
-      &::after {
-        color: hsla(0, 0%, 50%, 1);
-      }
-    }
-
-    &.v-sheet--outlined {
-      border: thin solid hsla(0,0%,100%,.12) !important;
-    }
-
-    .token.operator,
-    .token.string {
-      background: none;
-    }
-
-    .token.comment,
-    .token.block-comment,
-    .token.prolog,
-    .token.doctype,
-    .token.cdata {
-      color: #999;
-    }
-
-    .token.punctuation {
-      color: #ccc;
-    }
-
-    .token.tag,
-    .token.attr-name,
-    .token.namespace,
-    .token.deleted {
-      color: #e2777a;
-    }
-
-    .token.function-name {
-      color: #6196cc;
-    }
-
-    .token.boolean,
-    .token.number,
-    .token.function {
-      color: #f08d49;
-    }
-
-    .token.property,
-    .token.class-name,
-    .token.constant,
-    .token.symbol {
-      color: #f8c555;
-    }
-
-    .token.selector,
-    .token.important,
-    .token.atrule,
-    .token.keyword,
-    .token.builtin {
-      color: #cc99cd;
-    }
-
-    .token.string,
-    .token.char,
-    .token.attr-value,
-    .token.regex,
-    .token.variable {
-      color: #7ec699;
-    }
-
-    .token.operator,
-    .token.entity,
-    .token.url {
-      color: #67cdcc;
-    }
-
-    .token.important,
-    .token.bold {
-      font-weight: bold;
-    }
-
-    .token.italic {
-      font-style: italic;
-    }
-
-    .token.entity {
-      cursor: help;
-    }
-
-    .token.inserted {
-      color: green;
-    }
-  }
 }
 </style>

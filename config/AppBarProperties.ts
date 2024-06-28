@@ -124,12 +124,13 @@ export const appBarLayoutConfig = [
       //   default: 48,
       //   description: 'Designate an explicit height for the extension slot.',
       // },
-      // {
-      //   name: 'height',
-      //   type: 'string | number',
-      //   default: 64,
-      //   description: 'Designates a specific height for the toolbar.',
-      // },
+      {
+        name: 'height',
+        component: Component.NUMBER_SELECTOR,
+        type: PropertyType.PROP,
+        default: 64,
+        description: 'Designates a specific height for the toolbar.',
+      },
       {
         name: 'density',
         title: 'Density',
