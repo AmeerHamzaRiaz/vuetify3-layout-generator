@@ -27,7 +27,7 @@ export const footerLayoutProperties = [
         title: 'App',
         component: Component.SWITCH,
         type: PropertyType.PROP,
-        default: true,
+        default: false,
         description: 'Determines the position of the footer. If true, the footer is fixed at the bottom of the viewport; otherwise, it is at the bottom of the page.',
       },
     ],

@@ -175,7 +175,7 @@ export const navigationDrawerProperties = [
       },
       {
         name: 'temporary',
-        title: 'Rail',
+        title: 'Temporary',
         component: Component.SWITCH,
         default: false,
         type: PropertyType.PROP,

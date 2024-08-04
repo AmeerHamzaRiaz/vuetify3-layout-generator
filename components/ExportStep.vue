@@ -23,7 +23,9 @@ const generatedTemplate = ref('')
 const onExport = () => {
   dialog.value = true
   const finalTemplate
-  = `<template>${mapProperties(appBarTemplate, props.appBarLayoutValues, appBarLayoutConfig)}${mapProperties(startNavDrawerTemplate, props.startLayoutValues, navigationDrawerProperties)}${mapProperties(endNavDrawerTemplate, props.endLayoutValues, navigationDrawerProperties)}${mapProperties(footerTemplate, props.footerLayoutValues, footerLayoutProperties)}</template>
+  = `<template>
+  <v-app>${mapProperties(appBarTemplate, props.appBarLayoutValues, appBarLayoutConfig)}${mapProperties(startNavDrawerTemplate, props.startLayoutValues, navigationDrawerProperties)}${mapProperties(endNavDrawerTemplate, props.endLayoutValues, navigationDrawerProperties)}${mapProperties(footerTemplate, props.footerLayoutValues, footerLayoutProperties)}</v-app>
+  </template>
   `
   generatedTemplate.value = formatVueTemplate(finalTemplate)
 }
